@@ -1,3 +1,4 @@
 streamlit
 anthropic
 langchain_core
+dotenv

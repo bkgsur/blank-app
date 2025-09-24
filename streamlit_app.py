@@ -1,9 +1,12 @@
 import streamlit as st
 import anthropic
 from langchain_core.messages import AIMessage, HumanMessage
-anthropic_api_key = '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'
-file_name = "book.pdf"
-chat_title = '18 Startup'
+from dotenv import load_dotenv
+        load_dotenv()
+anthropic_api_key =  os.getenv("ANTHROPIC_API_KEY")
+chat_title =  os.getenv("CHAT_TITLE")
+filename =  os.getenv("FILE_NAME")
+ 
 
 client = anthropic.Anthropic(   
     api_key=anthropic_api_key
@@ -11,7 +14,7 @@ client = anthropic.Anthropic(
 
 files = client.beta.files.list()
 for file in files:
-    if file.filename == "book.pdf":
+    if file.filename == filename:
         file_id = file.id
         print(file_id)
         break
