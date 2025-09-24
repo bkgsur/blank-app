@@ -2,7 +2,9 @@ import streamlit as st
 import anthropic
 from langchain_core.messages import AIMessage, HumanMessage
 from dotenv import load_dotenv
-        load_dotenv()
+load_dotenv()
+
+
 anthropic_api_key =  os.getenv("ANTHROPIC_API_KEY")
 chat_title =  os.getenv("CHAT_TITLE")
 filename =  os.getenv("FILE_NAME")
